@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h2>Results</h2>
+    <p>Total Profit: {{ total_profit }}</p>
+
+    <h3>Job Data:</h3>
+    <ul>
+        {% for job in job_data %}
+            <li>Job Name: {{ job.0 }}, Deadline: {{ job.1 }}, Profit: {{ job.2 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Form</title>
+</head>
+<body>
+    <h2>Job Form</h2>
+    <form action="{% url 'submit_jobs' %}" method="post">
+
+        {% csrf_token %}
+
+        {% for job_number in '12345' %}
+            <label for="job{{ job_number }}_name">Job {{ job_number }} Name:</label>
+            <input type="text" id="job{{ job_number }}_name" name="job{{ job_number }}_name" required><br>
+            <label for="job{{ job_number }}_deadline">Job {{ job_number }} Deadline:</label>
+            <input type="number" id="job{{ job_number }}_deadline" name="job{{ job_number }}_deadline" required><br>
+            <label for="job{{ job_number }}_profit">Job {{ job_number }} Profit:</label>
+            <input type="number" id="job{{ job_number }}_profit" name="job{{ job_number }}_profit" required><br><br>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
